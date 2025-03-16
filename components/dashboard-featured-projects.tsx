@@ -24,7 +24,7 @@ const DashboardFeaturedProjects = () => {
             description="This Website"
             imgSrc="/projects/images/Portfolio.png"
             imgAlt="Portfolio Picture"
-            stack={["React.js", "Next.js", "shadcn/ui"]}
+            stack={["TypeScript", "React.js", "Next.js", "shadcn/ui"]}
             key="Portfolio_card"
           />
           <DashboardFeaturedProjectsCard
@@ -32,7 +32,15 @@ const DashboardFeaturedProjects = () => {
             description="Application to track your Applications"
             imgSrc="/projects/images/bewerbung.png"
             imgAlt="Bewerbung Picture"
-            stack={["React.js", "Next.js", "shadcn/ui", "prisma", "postgresql"]}
+            stack={[
+              "TypeScript",
+              "React.js",
+              "Next.js",
+              "shadcn/ui",
+              "Prisma",
+              "PostgreSQL",
+              "Better Auth",
+            ]}
             key="Bewerbung_card"
           />
         </div>

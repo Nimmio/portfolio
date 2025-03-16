@@ -12,61 +12,70 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
+interface IProjects {
+  name: string;
+  description: string;
+  imgSrc: string;
+  imgAlt: string;
+  stack: string[];
+  repoUrl: string;
+  key: string;
+}
+
 export default function ProjectsPage() {
-  const projects = [
+  const projects: IProjects[] = [
     {
-      title: "E-commerce Platform",
-      description:
-        "A full-featured e-commerce platform with payment processing and inventory management.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      demoUrl: "#",
-      codeUrl: "#",
+      name: "Portfolio",
+      description: "This Website",
+      imgSrc: "/projects/images/Portfolio.png",
+      imgAlt: "Portfolio Picture",
+      stack: ["TypeScript", "React.js", "Next.js", "shadcn/ui"],
+      key: "Portfolio_card",
+      repoUrl: "https://github.com/Nimmio/portfolio",
     },
     {
-      title: "Portfolio Dashboard",
-      description:
-        "A dashboard for tracking investments and financial portfolio performance.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["Next.js", "Tailwind CSS", "Prisma", "PostgreSQL"],
-      demoUrl: "#",
-      codeUrl: "#",
+      name: "Bewerbung",
+      description: "Application to track your Applications",
+      imgSrc: "/projects/images/bewerbung.png",
+      imgAlt: "Bewerbung Picture",
+      stack: [
+        "TypeScript",
+        "React.js",
+        "Next.js",
+        "shadcn/ui",
+        "Prisma",
+        "PostgreSQL",
+        "Better Auth",
+      ],
+      key: "Bewerbung_card",
+      repoUrl: "https://github.com/Nimmio/bewerbung",
     },
     {
-      title: "Social Media App",
+      name: "Boiler",
       description:
-        "A social networking application with real-time messaging and content sharing.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["React Native", "Firebase", "Redux", "WebSockets"],
-      demoUrl: "#",
-      codeUrl: "#",
+        "Next.js, Shadcn/ui, Prisma and better-auth Boilerplate with basic Usermanagment",
+      imgSrc: "/projects/images/bewerbung.png",
+      imgAlt: "Bewerbung Picture",
+      stack: [
+        "TypeScript",
+        "React.js",
+        "Next.js",
+        "shadcn/ui",
+        "Prisma",
+        "PostgreSQL",
+        "Better Auth ",
+      ],
+      key: "Bewerbung_card",
+      repoUrl: "https://github.com/Nimmio/bewerbung",
     },
     {
-      title: "AI Content Generator",
-      description:
-        "An AI-powered tool that generates marketing content based on user prompts.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["Python", "TensorFlow", "Flask", "React"],
-      demoUrl: "#",
-      codeUrl: "#",
-    },
-    {
-      title: "Fitness Tracker",
-      description:
-        "A mobile app for tracking workouts, nutrition, and fitness progress.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["Flutter", "Firebase", "GraphQL", "HealthKit"],
-      demoUrl: "#",
-      codeUrl: "#",
-    },
-    {
-      title: "Weather Application",
-      description:
-        "A weather forecasting app with location-based services and interactive maps.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["Vue.js", "Express", "OpenWeatherAPI", "Mapbox"],
-      demoUrl: "#",
-      codeUrl: "#",
+      name: "TradingPlatformExample",
+      description: "A quick and dirty Trading Platform Example/Demo",
+      imgSrc: "/projects/images/bewerbung.png",
+      imgAlt: "Bewerbung Picture",
+      stack: ["TypeScript", "React.js", "Next.js", "Mantine"],
+      key: "Bewerbung_card",
+      repoUrl: "https://github.com/Nimmio/bewerbung",
     },
   ];
 
@@ -78,7 +87,7 @@ export default function ProjectsPage() {
             Projects
           </h1>
           <p className="text-xl text-muted-foreground">
-            A collection of my work, side projects, and experiments.
+            A collection of my work.
           </p>
         </div>
       </div>
@@ -87,34 +96,30 @@ export default function ProjectsPage() {
           <Card key={index} className="overflow-hidden">
             <div className="aspect-video w-full overflow-hidden">
               <Image
-                src={project.image || "/placeholder.svg"}
-                alt={project.title}
+                src={project.imgSrc}
+                alt={project.imgAlt}
                 className="object-cover w-full h-full transition-all hover:scale-105"
                 height={400}
                 width={600}
               />
             </div>
             <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
+              <CardTitle>{project.name}</CardTitle>
               <CardDescription>{project.description}</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
+                {project.stack.map((tag) => (
                   <Badge key={tag} variant="secondary">
                     {tag}
                   </Badge>
                 ))}
               </div>
             </CardContent>
+
             <CardFooter className="flex justify-between">
-              <Button asChild variant="outline" size="sm">
-                <Link href={project.demoUrl}>
-                  Live Demo <ExternalLink className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
               <Button asChild size="sm">
-                <Link href={project.codeUrl}>
+                <Link href={project.repoUrl}>
                   View Code <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
