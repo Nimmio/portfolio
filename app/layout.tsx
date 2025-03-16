@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { MainNav } from "@/components/navigaton";
 import { ModeToggle } from "@/components/theme-toggle";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Footer } from "@/components/footer";
 //import { Footer } from "@/components/footer"
 
 const inter = Inter({ subsets: ["latin"] });
@@ -37,8 +38,10 @@ export default function RootLayout({
                 </div>
               </div>
             </header>
-            {children}
-            {/* {  <Footer />} */}
+            <div className="flex flex-col min-h-[calc(100vh-9rem)]">
+              {children}
+            </div>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>

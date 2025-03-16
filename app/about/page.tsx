@@ -76,8 +76,8 @@ export default function AboutPage() {
         <div className="flex flex-col items-center md:w-1/3">
           <div className="relative h-60 w-60 overflow-hidden rounded-full">
             <Image
-              src="/placeholder.svg?height=240&width=240"
-              alt="John Doe"
+              src="/avatar/profil.jpeg"
+              alt="Benjamin Wilhelm"
               width={240}
               height={240}
               className="object-cover"
@@ -85,9 +85,9 @@ export default function AboutPage() {
             />
           </div>
           <div className="mt-6 text-center">
-            <h1 className="text-3xl font-bold">John Doe</h1>
+            <h1 className="text-3xl font-bold">Benjamin Wilhelm</h1>
             <p className="text-xl text-muted-foreground">
-              Full Stack Developer & UI/UX Designer
+              Full Stack Developer
             </p>
             <div className="mt-4">
               <Button asChild>

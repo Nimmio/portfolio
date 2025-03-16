@@ -45,8 +45,7 @@ const routes: IRoutes[] = [
   },
   {
     href: "mailto:benjamin@wilhelmit.de",
-    label: "Contact (E-Mail)",
-    icon: <Mail />,
+    label: "Contact",
   },
 ];
 
