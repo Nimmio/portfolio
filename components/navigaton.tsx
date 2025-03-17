@@ -25,39 +25,40 @@ interface IRoutes {
   label: string;
   icon?: ReactNode;
 }
+const getRoutes = (email: string): IRoutes[] => {
+  return [
+    {
+      href: "/",
+      label: "Home",
+    },
+    {
+      href: "/projects",
+      label: "Projects",
+    },
+    {
+      href: "/skills",
+      label: "Skills",
+    },
+    {
+      href: "/about",
+      label: "About Me",
+    },
+    {
+      href: `mailto:${email}`,
+      label: "E-Mail me",
+    },
+  ];
+};
 
-const routes: IRoutes[] = [
-  {
-    href: "/",
-    label: "Home",
-  },
-  {
-    href: "/projects",
-    label: "Projects",
-  },
-  {
-    href: "/skills",
-    label: "Skills",
-  },
-  {
-    href: "/about",
-    label: "About Me",
-  },
-  {
-    href: "mailto:benjamin@wilhelmit.de",
-    label: "Contact",
-  },
-];
-
-export function MainNav() {
+export function MainNav(params: { name: string; email: string }) {
   const pathname = usePathname();
   const isMobile = useMobile();
-
+  const { name, email } = params;
   if (isMobile) {
     return (
       <div className="flex w-full justify-between items-center">
         <Link href="/" className="font-bold text-xl">
-          Benjamin Wilhelm
+          {name}
         </Link>
         <Sheet>
           <SheetTrigger asChild>
@@ -69,7 +70,7 @@ export function MainNav() {
           <SheetContent side="right">
             <SheetTitle className="pl-8 pt-4">Navigation</SheetTitle>
             <nav className="pl-8 flex flex-col gap-4 mt-8">
-              {routes.map((route) => (
+              {getRoutes(email).map((route) => (
                 <Link
                   key={route.href}
                   href={route.href}
@@ -93,11 +94,11 @@ export function MainNav() {
   return (
     <div className="flex gap-6 md:gap-10">
       <span className="hidden md:flex font-bold text-xl items-center">
-        Benjamin Wilhelm
+        {name}
       </span>
       <NavigationMenu>
         <NavigationMenuList>
-          {routes.map((route) => (
+          {getRoutes(email).map((route) => (
             <NavigationMenuItem key={route.href}>
               <Link href={route.href} legacyBehavior passHref>
                 <NavigationMenuLink>

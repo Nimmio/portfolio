@@ -19,7 +19,6 @@ interface IProjects {
   imgAlt: string;
   stack: string[];
   repoUrl: string;
-  key: string;
 }
 
 export default function ProjectsPage() {
@@ -30,7 +29,6 @@ export default function ProjectsPage() {
       imgSrc: "/projects/images/Portfolio.png",
       imgAlt: "Portfolio Picture",
       stack: ["TypeScript", "React.js", "Next.js", "shadcn/ui"],
-      key: "Portfolio_card",
       repoUrl: "https://github.com/Nimmio/portfolio",
     },
     {
@@ -47,14 +45,13 @@ export default function ProjectsPage() {
         "PostgreSQL",
         "Better Auth",
       ],
-      key: "Bewerbung_card",
       repoUrl: "https://github.com/Nimmio/bewerbung",
     },
     {
       name: "Boiler",
       description:
         "Next.js, Shadcn/ui, Prisma and better-auth Boilerplate with basic Usermanagment",
-      imgSrc: "/projects/images/bewerbung.png",
+      imgSrc: "/projects/images/boiler.png",
       imgAlt: "Bewerbung Picture",
       stack: [
         "TypeScript",
@@ -65,17 +62,15 @@ export default function ProjectsPage() {
         "PostgreSQL",
         "Better Auth ",
       ],
-      key: "Bewerbung_card",
-      repoUrl: "https://github.com/Nimmio/bewerbung",
+      repoUrl: "https://github.com/Nimmio/boiler",
     },
     {
       name: "TradingPlatformExample",
       description: "A quick and dirty Trading Platform Example/Demo",
-      imgSrc: "/projects/images/bewerbung.png",
+      imgSrc: "/projects/images/trading.png",
       imgAlt: "Bewerbung Picture",
       stack: ["TypeScript", "React.js", "Next.js", "Mantine"],
-      key: "Bewerbung_card",
-      repoUrl: "https://github.com/Nimmio/bewerbung",
+      repoUrl: "https://github.com/Thanera/TradingPlatformExample",
     },
   ];
 

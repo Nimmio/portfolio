@@ -44,6 +44,8 @@ export default function AboutPage() {
       period: "2018 – 2019",
     },
   ];
+  const name = process.env.NAME || "";
+  const job = process.env.JOB || "";
 
   return (
     <div className=" py-12 p-8">
@@ -52,7 +54,7 @@ export default function AboutPage() {
           <div className="relative h-60 w-60 overflow-hidden rounded-full">
             <Image
               src="/avatar/profile.jpeg"
-              alt="Benjamin Wilhelm"
+              alt={name}
               width={240}
               height={240}
               className="object-cover"
@@ -60,10 +62,8 @@ export default function AboutPage() {
             />
           </div>
           <div className="mt-6 text-center">
-            <h1 className="text-3xl font-bold">Benjamin Wilhelm</h1>
-            <p className="text-xl text-muted-foreground">
-              Full Stack Developer
-            </p>
+            <h1 className="text-3xl font-bold">{name}</h1>
+            <p className="text-xl text-muted-foreground">{job}</p>
           </div>
         </div>
         <div className="md:w-2/3">
@@ -72,21 +72,12 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold">About Me</h2>
               <div className="mt-4 space-y-4">
                 <p>
-                  I'm a passionate Full Stack Developer with over 7 years of
-                  experience in building web applications. I specialize in
-                  creating responsive, accessible, and performant user
-                  interfaces using modern technologies.
-                </p>
-                <p>
-                  My journey in web development started during my university
-                  years, where I discovered my passion for creating digital
-                  experiences. Since then, I've worked with various companies
-                  and clients, helping them bring their ideas to life.
-                </p>
-                <p>
-                  When I'm not coding, you can find me hiking, reading science
-                  fiction, or experimenting with new technologies. I'm always
-                  eager to learn and grow, both professionally and personally.
+                  Innovative Fullstack web developer with expertise in Next.js
+                  and React for building dynamic user interfaces, and Node.js
+                  for robust back-end solutions. Proficient in modern front-end
+                  and back-end technologies, with a strong commitment to
+                  adhering to current web standards and implementing advanced
+                  development techniques.
                 </p>
               </div>
             </div>

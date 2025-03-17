@@ -39,7 +39,6 @@ const DashboardFeaturedProjects = () => {
               "shadcn/ui",
               "Prisma",
               "PostgreSQL",
-              "Better Auth",
             ]}
             key="Bewerbung_card"
           />
