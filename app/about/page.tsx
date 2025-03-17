@@ -1,9 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Download, Briefcase, GraduationCap, Award } from "lucide-react";
+import { Briefcase, GraduationCap, Award } from "lucide-react";
 
 export default function AboutPage() {
   const experiences = [

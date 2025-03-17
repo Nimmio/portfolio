@@ -1,7 +1,3 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { MoveRight } from "lucide-react";
-import Image from "next/image";
 import DashboardHeader from "@/components/dashboard-header";
 import DashboardFeaturedProjects from "@/components/dashboard-featured-projects";
 

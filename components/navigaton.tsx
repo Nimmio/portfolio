@@ -8,7 +8,6 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import {
   Sheet,
@@ -16,7 +15,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Mail, Menu, Upload } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useMobile } from "@/hooks/use-mobile";
 import { ReactNode } from "react";
 

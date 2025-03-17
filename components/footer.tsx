@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SiGithub, SiReact, SiXing } from "@icons-pack/react-simple-icons";
+import { SiGithub, SiXing } from "@icons-pack/react-simple-icons";
 
 export function Footer() {
   const name = process.env.NAME || "";
