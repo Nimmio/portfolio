@@ -2,8 +2,17 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Briefcase, GraduationCap } from "lucide-react";
+import { IDict } from "@/types/dict";
+import { getDictionary } from "@/get-dictionary";
 
-export default function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ lang: "en" | "de" }>;
+}) {
+  const { lang } = await params;
+  const dict: IDict = await getDictionary(lang);
+
   const experiences = [
     {
       title: "Senior Entwickler Webtechnologien",
@@ -67,22 +76,19 @@ export default function AboutPage() {
         <div className="md:w-2/3">
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl font-bold">About Me</h2>
+              <h2 className="text-2xl font-bold">{dict.about_me.title}</h2>
               <div className="mt-4 space-y-4">
-                <p>
-                  Innovative Fullstack web developer with expertise in Next.js
-                  and React for building dynamic user interfaces, and Node.js
-                  for robust back-end solutions. Proficient in modern front-end
-                  and back-end technologies, with a strong commitment to
-                  adhering to current web standards and implementing advanced
-                  development techniques.
-                </p>
+                <p>{dict.about_me.sub_title}</p>
               </div>
             </div>
             <Tabs defaultValue="experience" className="w-full">
               <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="experience">Experience</TabsTrigger>
-                <TabsTrigger value="education">Education</TabsTrigger>
+                <TabsTrigger value="experience">
+                  {dict.about_me.tabs.experience}
+                </TabsTrigger>
+                <TabsTrigger value="education">
+                  {dict.about_me.tabs.education}
+                </TabsTrigger>
               </TabsList>
               <TabsContent value="experience" className="mt-6 space-y-6">
                 {experiences.map((exp, index) => (

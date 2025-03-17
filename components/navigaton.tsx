@@ -17,42 +17,68 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useMobile } from "@/hooks/use-mobile";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 
 interface IRoutes {
   href: string;
-  label: string;
+  label: {
+    de: string;
+    en: string;
+  };
   icon?: ReactNode;
 }
-const getRoutes = (email: string): IRoutes[] => {
-  return [
+
+export const MainNav = (params: {
+  name: string;
+  email: string;
+  lang: TLang;
+}) => {
+  const pathname = usePathname();
+  const isMobile = useMobile();
+  const { name, email, lang } = params;
+
+  useEffect(() => {
+    console.log("pathname");
+  }, [pathname]);
+
+  const routes: IRoutes[] = [
     {
-      href: "/",
-      label: "Home",
+      href: "home",
+      label: {
+        en: "Home",
+        de: "Home",
+      },
     },
     {
-      href: "/projects",
-      label: "Projects",
+      href: "projects",
+      label: {
+        en: "Projects",
+        de: "Projekte",
+      },
     },
     {
-      href: "/skills",
-      label: "Skills",
+      href: "skills",
+      label: {
+        en: "Skills",
+        de: "Fertigkeiten",
+      },
     },
     {
-      href: "/about",
-      label: "About Me",
+      href: "about",
+      label: {
+        en: "About Me",
+        de: "Über mich",
+      },
     },
     {
       href: `mailto:${email}`,
-      label: "E-Mail me",
+      label: {
+        de: "E-Mail senden",
+        en: "Send e-mail",
+      },
     },
   ];
-};
 
-export function MainNav(params: { name: string; email: string }) {
-  const pathname = usePathname();
-  const isMobile = useMobile();
-  const { name, email } = params;
   if (isMobile) {
     return (
       <div className="flex w-full justify-between items-center">
@@ -69,19 +95,21 @@ export function MainNav(params: { name: string; email: string }) {
           <SheetContent side="right">
             <SheetTitle className="pl-8 pt-4">Navigation</SheetTitle>
             <nav className="pl-8 flex flex-col gap-4 mt-8">
-              {getRoutes(email).map((route) => (
-                <Link
-                  key={route.href}
-                  href={route.href}
-                  className={cn(
-                    "text-lg font-medium transition-colors hover:text-primary",
-                    pathname === route.href
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  )}
-                >
-                  {route.label}
-                </Link>
+              {routes.map((route) => (
+                <>
+                  <Link
+                    key={route.href}
+                    href={route.href}
+                    className={cn(
+                      "text-lg font-medium transition-colors hover:text-primary",
+                      pathname === route.href
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    )}
+                  >
+                    {route.label[lang]}
+                  </Link>
+                </>
               ))}
             </nav>
           </SheetContent>
@@ -97,12 +125,12 @@ export function MainNav(params: { name: string; email: string }) {
       </span>
       <NavigationMenu>
         <NavigationMenuList>
-          {getRoutes(email).map((route) => (
+          {routes.map((route) => (
             <NavigationMenuItem key={route.href}>
               <Link href={route.href} legacyBehavior passHref>
                 <NavigationMenuLink>
                   <span className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-accent data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent data-[state=open]:bg-accent/50 ring-ring/10 dark:ring-ring/20 dark:outline-ring/40 outline-ring/50 transition-[color,box-shadow] focus-visible:ring-4 focus-visible:outline-1">
-                    {route.label}
+                    {route.label[lang]}
                   </span>
                   {route.icon}
                 </NavigationMenuLink>
@@ -113,4 +141,4 @@ export function MainNav(params: { name: string; email: string }) {
       </NavigationMenu>
     </div>
   );
-}
+};

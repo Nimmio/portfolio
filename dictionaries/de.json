@@ -1,0 +1,49 @@
+{
+  "dashboard": {
+    "view_my_work": "Meine Arbeit ansehen",
+    "contact_me": "Kontakt aufnehmen",
+    "featured_projects": "Ausgewählte Projekte",
+    "view_all_projects": "Alle Projekte anzeigen",
+    "check_out_some_of_my_recent_work": "Sehen Sie sich einige meiner aktuellen Projekte an"
+  },
+  "projects": {
+    "view_code": "Code anzeigen",
+    "sub_title": "Eine Sammlung meiner Projekte.",
+    "title": "Projekte"
+  },
+  "skills": {
+    "title": "Fertigkeiten",
+    "sub_title": "Meine technischen Fähigkeiten und mein Fachwissen in verschiedenen Bereichen.",
+    "tabs": {
+      "frontend": {
+        "title": "Frontend-Entwicklung",
+        "subtitle": "Meine Fähigkeiten bei der Entwicklung von reaktionsschnellen, zugänglichen und leistungsstarken Benutzeroberflächen."
+      },
+      "backend": {
+        "title": "Backend-Entwicklung",
+        "subtitle": "Meine Fähigkeiten in der serverseitigen Programmierung, API-Entwicklung und Systemarchitektur."
+      },
+      "Database": {
+        "title": "Datenbank & Datenmanagement",
+        "subtitle": "Meine Fähigkeiten im Bereich Datenbankdesign, Optimierung und Datenmodellierung."
+      },
+      "Other": {
+        "title": "Andere technische Fertigkeiten",
+        "subtitle": "Zusätzliche Fähigkeiten wie DevOps, Design und Projektmanagement."
+      }
+    },
+    "levels": {
+      "Fundamental": "Grundlegend",
+      "Proficient": "Kompetent",
+      "Expert": "Experte"
+    }
+  },
+  "about_me": {
+    "sub_title": "Ich bin ein innovativer Fullstack-Webentwickler mit Erfahrung in Next.js und React, mit denen ich dynamische Benutzeroberflächen erstelle. Für robuste Backend-Lösungen setze ich auf Node.js. Ich beherrsche moderne Front-End- und Back-End-Technologien und lege großen Wert auf die Einhaltung aktueller Webstandards sowie die Implementierung fortschrittlicher Entwicklungstechniken.",
+    "title": "Über mich",
+    "tabs": {
+      "experience": "Work experience",
+      "education": "Bildung"
+    }
+  }
+}

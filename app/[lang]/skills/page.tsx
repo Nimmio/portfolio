@@ -7,6 +7,8 @@ import {
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { getDictionary } from "@/get-dictionary";
+import { IDict } from "@/types/dict";
 
 type TLevel = "Fundamental" | "Proficient" | "Expert";
 
@@ -22,7 +24,14 @@ interface ISkillGroups {
   other: ISkill[];
 }
 
-export default function SkillsPage() {
+export default async function SkillsPage({
+  params,
+}: {
+  params: Promise<{ lang: "en" | "de" }>;
+}) {
+  const { lang } = await params;
+  const dict: IDict = await getDictionary(lang);
+
   const skills: ISkillGroups = {
     frontend: [
       { name: "HTML/CSS", level: "Expert" },
@@ -74,10 +83,10 @@ export default function SkillsPage() {
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
         <div className="flex-1 space-y-4">
           <h1 className="inline-block text-4xl font-extrabold tracking-tight lg:text-5xl">
-            Skills
+            {dict.skills.title}
           </h1>
           <p className="text-xl text-muted-foreground">
-            My technical skills and expertise across different domains.
+            {dict.skills.sub_title}
           </p>
         </div>
       </div>
@@ -92,10 +101,9 @@ export default function SkillsPage() {
           <TabsContent value="frontend" className="mt-6">
             <Card>
               <CardHeader>
-                <CardTitle>Frontend Development</CardTitle>
+                <CardTitle>{dict.skills.tabs.frontend.title}</CardTitle>
                 <CardDescription>
-                  My skills in building responsive, accessible, and performant
-                  user interfaces.
+                  {dict.skills.tabs.frontend.subtitle}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -104,7 +112,7 @@ export default function SkillsPage() {
                     <div className="flex justify-between">
                       <span className="font-medium">{skill.name}</span>
                       <span className="text-muted-foreground">
-                        {skill.level}
+                        {dict.skills.levels[skill.level]}
                       </span>
                     </div>
                     <Progress
@@ -119,10 +127,10 @@ export default function SkillsPage() {
           <TabsContent value="backend" className="mt-6">
             <Card>
               <CardHeader>
-                <CardTitle>Backend Development</CardTitle>
+                <CardTitle>{dict.skills.tabs.backend.title}</CardTitle>
+
                 <CardDescription>
-                  My skills in server-side programming, API development, and
-                  system architecture.
+                  {dict.skills.tabs.backend.subtitle}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -131,7 +139,7 @@ export default function SkillsPage() {
                     <div className="flex justify-between">
                       <span className="font-medium">{skill.name}</span>
                       <span className="text-muted-foreground">
-                        {skill.level}
+                        {dict.skills.levels[skill.level]}
                       </span>
                     </div>
                     <Progress
@@ -146,9 +154,9 @@ export default function SkillsPage() {
           <TabsContent value="database" className="mt-6">
             <Card>
               <CardHeader>
-                <CardTitle>Database & Data Management</CardTitle>
+                <CardTitle>{dict.skills.tabs.Database.title}</CardTitle>
                 <CardDescription>
-                  My skills in database design, optimization, and data modeling.
+                  {dict.skills.tabs.Database.subtitle}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -157,7 +165,7 @@ export default function SkillsPage() {
                     <div className="flex justify-between">
                       <span className="font-medium">{skill.name}</span>
                       <span className="text-muted-foreground">
-                        {skill.level}
+                        {dict.skills.levels[skill.level]}
                       </span>
                     </div>
                     <Progress
@@ -172,10 +180,9 @@ export default function SkillsPage() {
           <TabsContent value="other" className="mt-6">
             <Card>
               <CardHeader>
-                <CardTitle>Other Technical Skills</CardTitle>
+                <CardTitle>{dict.skills.tabs.Other.title}</CardTitle>
                 <CardDescription>
-                  Additional skills including DevOps, design, and project
-                  management.
+                  {dict.skills.tabs.Other.subtitle}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -184,7 +191,7 @@ export default function SkillsPage() {
                     <div className="flex justify-between">
                       <span className="font-medium">{skill.name}</span>
                       <span className="text-muted-foreground">
-                        {skill.level}
+                        {dict.skills.levels[skill.level]}
                       </span>
                     </div>
                     <Progress

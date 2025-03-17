@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Portfolio",
+    "description": {
+      "en": "This Website",
+      "de": "Diese Website"
+    },
+    "imgSrc": "/projects/images/Portfolio.png",
+    "imgAlt": "Portfolio Picture",
+    "stack": ["TypeScript", "React.js", "Next.js", "shadcn/ui"]
+  },
+  {
+    "name": "Bewerbung",
+    "description": {
+      "en": "Application to track your Applications",
+      "de": "Anwendung zur Verfolgung Ihrer Bewerbungen"
+    },
+    "imgSrc": "/projects/images/bewerbung.png",
+    "imgAlt": "Bewerbung Picture",
+    "stack": [
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "shadcn/ui",
+      "Prisma",
+      "PostgreSQL"
+    ],
+    "key": "Bewerbung_card"
+  }
+]

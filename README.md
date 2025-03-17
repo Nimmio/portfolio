@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mein Next.js Portfolio
 
-## Getting Started
+Willkommen zu meinem persönlichen Portfolio-Projekt, das mit Next.js erstellt wurde.
 
-First, run the development server:
+## Beschreibung
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Dieses Projekt dient als mein digitales Portfolio, in dem ich meine Fähigkeiten, Projekte und Erfahrungen präsentiere. Es wurde mit Next.js entwickelt, um eine schnelle, reaktionsfähige und SEO-freundliche Website zu erstellen.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funktionen
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Übersicht**: Eine kurze Vorstellung meiner Person und meiner Fähigkeiten.
+- **Projekte**: Eine Sammlung meiner abgeschlossenen Projekte mit Beschreibungen und Links.
+- **Fähigkeiten**: Eine Übersicht meiner technischen Fähigkeiten und Kenntnisse.
+- **Kontakt**: Ein Kontaktformular oder Informationen zur Kontaktaufnahme.
+- **Responsives Design**: Die Website ist für verschiedene Bildschirmgrößen optimiert.
+- **SEO-freundlich**: Next.js ermöglicht eine optimale Suchmaschinenoptimierung.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologien
 
-## Learn More
+- **Next.js**: Ein React-Framework für serverseitiges Rendering und statische Seitengenerierung.
+- **React**: Eine JavaScript-Bibliothek zum Erstellen von Benutzeroberflächen.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  Klone das Repository: `git clone https://github.com/Nimmio/portfolio`
+2.  Navigiere zum Projektverzeichnis: `cd portfolio`
+3.  Installiere die Abhängigkeiten: `npm install` oder `yarn install`
+4.  Starte den Entwicklungsserver: `npm run dev` oder `yarn dev`
+5.  Öffne die Website im Browser: `http://localhost:3000`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Anpassung
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Passe den Inhalt der `pages`- und `components`-Verzeichnisse an, um dein Portfolio individuell zu gestalten.
+- Ändere das Design und das Styling in den CSS- oder Tailwind-Dateien.
+- Füge deine eigenen Projekte und Fähigkeiten hinzu.

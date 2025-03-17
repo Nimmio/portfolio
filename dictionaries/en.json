@@ -1,0 +1,49 @@
+{
+  "dashboard": {
+    "view_my_work": "View My Work",
+    "contact_me": "Contact Me",
+    "featured_projects": "Featured Projects",
+    "view_all_projects": "View All Projects",
+    "check_out_some_of_my_recent_work": "Check out some of my recent work"
+  },
+  "projects": {
+    "view_code": "View Code",
+    "sub_title": "A collection of my work.",
+    "title": "Projects"
+  },
+  "skills": {
+    "title": "Skills",
+    "sub_title": "My technical skills and expertise across different domains.",
+    "tabs": {
+      "frontend": {
+        "title": "Frontend Development",
+        "subtitle": "My skills in building responsive, accessible, and performant user interfaces."
+      },
+      "backend": {
+        "title": "Backend Development",
+        "subtitle": "My skills in server-side programming, API development and system architecture."
+      },
+      "Database": {
+        "title": "Database & Data Management",
+        "subtitle": "My skills in database design, optimization, and data modeling."
+      },
+      "Other": {
+        "title": "Other Technical Skills",
+        "subtitle": "Additional skills including DevOps, design, and project management."
+      }
+    },
+    "levels": {
+      "Fundamental": "Fundamental",
+      "Proficient": "Proficient",
+      "Expert": "Expert"
+    }
+  },
+  "about_me": {
+    "sub_title": "I am an innovative fullstack web developer with experience in Next.js and React, which I use to create dynamic user interfaces. For robust back-end solutions, I rely on Node.js. I am proficient in modern front-end and back-end technologies and place great emphasis on adhering to current web standards and implementing advanced development techniques",
+    "title": "About Me",
+    "tabs": {
+      "experience": "Experience",
+      "education": "Education"
+    }
+  }
+}
