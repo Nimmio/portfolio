@@ -15,12 +15,12 @@ const DashboardFeaturedProjectsCard = (
 ) => {
   const { name, stack, imgSrc, imgAlt, description } = params;
   return (
-    <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+    <div className="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm overflow-hidden">
       <div className="flex flex-col space-y-1.5 p-6">
         <h3 className="text-2xl font-semibold leading-none tracking-tight">
           {name}
         </h3>
-        <p className="text-sm text-muted-foreground flex gap-1">
+        <p className="text-sm text-muted-foreground flex gap-1 flex-wrap">
           {stack.map((element) => (
             <Badge key={`${name}_badge_${element}`} variant={"secondary"}>
               {element}
