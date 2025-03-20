@@ -96,20 +96,18 @@ export const MainNav = (params: {
             <SheetTitle className="pl-8 pt-4">Navigation</SheetTitle>
             <nav className="pl-8 flex flex-col gap-4 mt-8">
               {routes.map((route) => (
-                <>
-                  <Link
-                    key={route.href}
-                    href={route.href}
-                    className={cn(
-                      "text-lg font-medium transition-colors hover:text-primary",
-                      pathname === route.href
-                        ? "text-primary"
-                        : "text-muted-foreground"
-                    )}
-                  >
-                    {route.label[lang]}
-                  </Link>
-                </>
+                <Link
+                  key={route.href}
+                  href={route.href}
+                  className={cn(
+                    "text-lg font-medium transition-colors hover:text-primary",
+                    pathname === route.href
+                      ? "text-primary"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {route.label[lang]}
+                </Link>
               ))}
             </nav>
           </SheetContent>
