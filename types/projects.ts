@@ -8,4 +8,5 @@ export interface IProjects {
   imgAlt: string;
   stack: string[];
   repoUrl: string;
+  demoUrl?: string;
 }

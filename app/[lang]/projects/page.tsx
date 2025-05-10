@@ -54,9 +54,11 @@ export default async function ProjectsPage({
             </div>
             <CardHeader>
               <CardTitle>{project.name}</CardTitle>
-              <CardDescription>{project.description[lang]}</CardDescription>
+              <CardDescription className="h-[40]">
+                {project.description[lang]}
+              </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className=" h-[52]">
               <div className="flex flex-wrap gap-2">
                 {project.stack.map((tag) => (
                   <Badge key={tag} variant="secondary">
@@ -66,13 +68,21 @@ export default async function ProjectsPage({
               </div>
             </CardContent>
 
-            <CardFooter className="flex justify-between">
+            <CardFooter>
               <Button asChild size="sm">
                 <Link href={project.repoUrl}>
                   {dict.projects.view_code}
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
+              {project.demoUrl && (
+                <Button asChild size="sm" className="ml-4">
+                  <Link href={project.repoUrl}>
+                    {dict.projects.view_demo}
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
             </CardFooter>
           </Card>
         ))}

@@ -8,6 +8,7 @@ export interface IDict {
   };
   projects: {
     view_code: string;
+    view_demo: string;
     sub_title: string;
     title: string;
   };

@@ -58,5 +58,25 @@
     "imgAlt": "Bewerbung Picture",
     "stack": ["TypeScript", "React.js", "Next.js", "Mantine"],
     "repoUrl": "https://github.com/Thanera/TradingPlatformExample"
+  },
+  {
+    "name": "Backlog-Organizer",
+    "description": {
+      "en": "Application to organize your Videogame Backlog",
+      "de": "Anwendung zum Organisieren eines Videogame Backlogs"
+    },
+    "imgSrc": "/projects/images/backlog.png",
+    "imgAlt": "Portfolio Picture",
+    "stack": [
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "shadcn/ui",
+      "Prisma",
+      "PostgreSQL",
+      "Zustand"
+    ],
+    "repoUrl": "https://github.com/Nimmio/backlog-organizer",
+    "demoUrl": "https://backlog-organizer.vercel.app/"
   }
 ]

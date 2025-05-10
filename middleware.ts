@@ -36,6 +36,7 @@ export function middleware(request: NextRequest) {
       "/projects/images/boiler.png",
       "/projects/images/Portfolio.png",
       "/projects/images/trading.png",
+      "/projects/images/backlog.png",
     ].includes(pathname)
   )
     return;

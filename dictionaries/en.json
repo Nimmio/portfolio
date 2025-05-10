@@ -8,6 +8,8 @@
   },
   "projects": {
     "view_code": "View Code",
+    "view_demo": "View Demo",
+
     "sub_title": "A collection of my work.",
     "title": "Projects"
   },
@@ -39,11 +41,14 @@
     }
   },
   "about_me": {
-    "sub_title": "I am an innovative fullstack web developer with experience in Next.js and React, which I use to create dynamic user interfaces. For robust back-end solutions, I rely on Node.js. I am proficient in modern front-end and back-end technologies and place great emphasis on adhering to current web standards and implementing advanced development techniques",
+    "sub_title": "Experienced Full-Stack Developer with 5 years of expertise in the conception and implementation of complex web applications. Specialized in React and Next.js, with a passion for learning new technologies and a quick grasp.",
     "title": "About Me",
     "tabs": {
       "experience": "Experience",
       "education": "Education"
     }
+  },
+  "email": {
+    "title": "Sent E-Mail"
   }
 }
