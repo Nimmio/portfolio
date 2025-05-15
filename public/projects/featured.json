@@ -15,7 +15,9 @@
       "Prisma",
       "PostgreSQL",
       "Zustand"
-    ]
+    ],
+    "repoUrl": "https://github.com/Nimmio/backlog-organizer",
+    "demoUrl": "https://backlog-organizer.vercel.app/"
   },
   {
     "name": "Bewerbung",
@@ -33,6 +35,9 @@
       "Prisma",
       "PostgreSQL"
     ],
-    "key": "Bewerbung_card"
+    "key": "Bewerbung_card",
+
+    "repoUrl": "https://github.com/Nimmio/bewerbung",
+    "demoUrl": "https://bewerbung-beta.vercel.app/"
   }
 ]

@@ -35,6 +35,8 @@ const DashboardFeaturedProjects = async (params: { lang: "en" | "de" }) => {
               imgSrc={project.imgSrc}
               imgAlt={project.imgAlt}
               stack={project.stack}
+              demo={project.demoUrl}
+              repo={project.repoUrl}
               key={`featured_project_${project.name}_card`}
             />
           ))}

@@ -27,7 +27,8 @@
       "PostgreSQL",
       "Better Auth"
     ],
-    "repoUrl": "https://github.com/Nimmio/bewerbung"
+    "repoUrl": "https://github.com/Nimmio/bewerbung",
+    "demoUrl": "https://bewerbung-beta.vercel.app/"
   },
   {
     "name": "Boiler",
