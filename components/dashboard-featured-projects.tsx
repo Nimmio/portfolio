@@ -30,6 +30,7 @@ const DashboardFeaturedProjects = async (params: { lang: "en" | "de" }) => {
         <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
           {projects.map((project) => (
             <DashboardFeaturedProjectsCard
+              lang={lang}
               name={project.name}
               description={project.description[lang]}
               imgSrc={project.imgSrc}
