@@ -77,7 +77,7 @@ export default async function ProjectsPage({
               </Button>
               {project.demoUrl && (
                 <Button asChild size="sm" className="ml-4">
-                  <Link href={project.repoUrl}>
+                  <Link href={project.demoUrl}>
                     {dict.projects.view_demo}
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Link>
