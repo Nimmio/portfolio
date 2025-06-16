@@ -1,1 +1,0 @@
-type TLang = "de" | "en";
