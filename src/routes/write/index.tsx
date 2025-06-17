@@ -41,7 +41,7 @@ function RouteComponent() {
             </a>
           </p>
 
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <h3>Data Protection</h3>
             <p className="text-sm text-muted-foreground">
               Your personal data will only be used to respond to your inquiry
@@ -52,7 +52,7 @@ function RouteComponent() {
               </a>
               .
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
       <div>
