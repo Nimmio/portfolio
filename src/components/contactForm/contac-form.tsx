@@ -184,14 +184,14 @@ export function ContactForm() {
               </FormItem>
             )}
           />
-
+          {/* 
           <FormDescription className="text-xs">
             By submitting this form, you agree to our{" "}
             <Link to="/privacy-policy" className="underline">
               Privacy Policy
             </Link>
             . Your data will only be used to respond to your inquiry.
-          </FormDescription>
+          </FormDescription> */}
 
           {submitStatus && (
             <Alert variant={submitStatus.success ? "default" : "destructive"}>
