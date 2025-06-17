@@ -30,7 +30,7 @@ function RouteComponent() {
             title={project.name}
             description={project.description.en}
             tags={project.stack}
-            image={`/src/public/images/${project.imgSrc}`}
+            image={`/images/${project.imgSrc}`}
             repoUrl={project.repoUrl}
             demoUrl={project.demoUrl}
           />

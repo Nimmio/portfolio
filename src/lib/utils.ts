@@ -12,9 +12,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 const readJson = async (filename: string): Promise<unknown> => {
-  return JSON.parse(
-    await fs.promises.readFile(`src/public/${filename}`, "utf8")
-  );
+  return JSON.parse(await fs.promises.readFile(`public/${filename}`, "utf8"));
 };
 
 export const getInfos = createServerFn({

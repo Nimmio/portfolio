@@ -6,12 +6,12 @@
 
 # Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
 
-ARG NODE_VERSION=23.11.1
-ARG PNPM_VERSION=10.11.0
+ARG NODE_VERSION=24.2.0
+ARG PNPM_VERSION=10.12.1
 
 ################################################################################
 # Use node image for base image for all stages.
-FROM node:${NODE_VERSION}-alpine AS base
+FROM node:${NODE_VERSION}-alpine as base
 
 # Set working directory for all build stages.
 WORKDIR /usr/src/app
@@ -46,11 +46,8 @@ RUN --mount=type=bind,source=package.json,target=package.json \
 
 # Copy the rest of the source files into the image.
 COPY . .
-
-
 # Run the build script.
- RUN pnpm run build
-
+RUN pnpm run build
 
 ################################################################################
 # Create a new stage to run the application with minimal runtime dependencies
@@ -70,9 +67,10 @@ COPY package.json .
 # the built application from the build stage into the image.
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/.output ./.output
+
+
 # Expose the port that the application listens on.
 EXPOSE 3000
 
-
 # Run the application.
-CMD ["sh", "-c"," pnpm start"]
+CMD ["node",".output/server/index.mjs"]

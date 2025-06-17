@@ -28,7 +28,7 @@ function RouteComponent() {
         <div className="space-y-6">
           <div className="relative aspect-square overflow-hidden rounded-lg">
             <img
-              src="src/public/images/profil.jpeg"
+              src="/images/profil.jpeg"
               alt="Profile picture"
               className="object-cover"
             />

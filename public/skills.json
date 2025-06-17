@@ -1,0 +1,68 @@
+{
+  "AllSkills": [
+    {
+      "groupTitle": "Frontend",
+      "description:": "TODO",
+      "skills": [
+        "HTML/CSS",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Nuxt.js",
+        "Tailwind CSS",
+        "Shadcn/UI",
+        "TypeScript",
+        "Vue.js",
+        "Angular",
+        "Php",
+        "Zustand",
+        "React Query",
+        "Tanstack",
+        "zod"
+      ]
+    },
+    {
+      "groupTitle": "Backend",
+      "description:": "TODO",
+      "skills": [
+        "Node.js",
+        "Express",
+        "GraphQL",
+        "RESTful APIs",
+        "Prisma",
+        "Nodemailer"
+      ]
+    },
+    {
+      "groupTitle": "Database",
+      "description:": "TODO",
+      "skills": ["PostgreSQL", "MongoDB", "SQLite"]
+    },
+    {
+      "groupTitle": "Other",
+      "description:": "TODO",
+      "skills": [
+        "Git/GitHub",
+        "Docker",
+        "CI/CD",
+        "UI/UX Design",
+        "Agile/Scrum",
+        "Hardware",
+        "Linux"
+      ]
+    }
+  ],
+  "FeaturedSkills": [
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "Shadcn/UI",
+    "TypeScript",
+    "Tanstack Start",
+    "Tanstack Router",
+    "Tanstack Query",
+    "Node.js",
+    "PostgreSQL",
+    "Docker"
+  ]
+}

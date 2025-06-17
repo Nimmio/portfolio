@@ -73,7 +73,7 @@ function Home() {
                 title={featuredProject.name}
                 description={featuredProject.description.en}
                 tags={featuredProject.stack}
-                image={`/src/public/images/${featuredProject.imgSrc}`}
+                image={`/images/${featuredProject.imgSrc}`}
                 repoUrl={featuredProject.repoUrl}
                 demoUrl={featuredProject.demoUrl}
               />
