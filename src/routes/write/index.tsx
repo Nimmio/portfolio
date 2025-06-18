@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/contactForm/contac-form";
+import PageHeader from "@/components/pageHeader/page-header";
 import { Button } from "@/components/ui/button";
 import { getInfos } from "@/lib/utils";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -13,15 +14,8 @@ function RouteComponent() {
   const info = Route.useLoaderData();
   return (
     <div className="container px-4 py-12 md:px-6 md:py-16 mx-auto">
-      <div className="flex items-center mb-8">
-        <Button variant="ghost" size="sm" asChild className="mr-4">
-          <Link to="/">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back
-          </Link>
-        </Button>
-        <h1 className="text-3xl font-bold tracking-tight">Write Me</h1>
-      </div>
+      <PageHeader title="Write Me" />
+
       <div>
         <div className="prose prose-slate dark:prose-invert">
           <h2>Get in Touch</h2>
@@ -40,23 +34,10 @@ function RouteComponent() {
               Link
             </a>
           </p>
-
-          {/* <div className="mt-8">
-            <h3>Data Protection</h3>
-            <p className="text-sm text-muted-foreground">
-              Your personal data will only be used to respond to your inquiry
-              and will not be shared with third parties. For more information,
-              please see our{" "}
-              <a href="/privacy-policy" className="underline">
-                Privacy Policy
-              </a>
-              .
-            </p>
-          </div> */}
         </div>
       </div>
       <div>
-        <ContactForm />
+        <ContactForm email={info.Email} />
       </div>
     </div>
   );

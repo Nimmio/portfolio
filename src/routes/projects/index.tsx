@@ -1,3 +1,4 @@
+import PageHeader from "@/components/pageHeader/page-header";
 import ProjectCard from "@/components/projectCard/project-card";
 import { Button } from "@/components/ui/button";
 import { getProjects } from "@/lib/utils";
@@ -13,15 +14,7 @@ function RouteComponent() {
   const projects = Route.useLoaderData();
   return (
     <div className="container px-4 py-12 md:px-6 md:py-16 mx-auto">
-      <div className="flex items-center mb-8">
-        <Button variant="ghost" size="sm" asChild className="mr-4">
-          <Link to="/">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back
-          </Link>
-        </Button>
-        <h1 className="text-3xl font-bold tracking-tight">All Projects</h1>
-      </div>
+      <PageHeader title="All Projects" />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (

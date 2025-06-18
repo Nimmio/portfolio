@@ -13,6 +13,8 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as WriteIndexRouteImport } from './routes/write/index'
 import { Route as SkillsIndexRouteImport } from './routes/skills/index'
 import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
+import { Route as PrivacyIndexRouteImport } from './routes/privacy/index'
+import { Route as LegalIndexRouteImport } from './routes/legal/index'
 import { Route as AboutIndexRouteImport } from './routes/about/index'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +37,16 @@ const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
   path: '/projects/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyIndexRoute = PrivacyIndexRouteImport.update({
+  id: '/privacy/',
+  path: '/privacy/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalIndexRoute = LegalIndexRouteImport.update({
+  id: '/legal/',
+  path: '/legal/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/about/',
   path: '/about/',
@@ -44,6 +56,8 @@ const AboutIndexRoute = AboutIndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutIndexRoute
+  '/legal': typeof LegalIndexRoute
+  '/privacy': typeof PrivacyIndexRoute
   '/projects': typeof ProjectsIndexRoute
   '/skills': typeof SkillsIndexRoute
   '/write': typeof WriteIndexRoute
@@ -51,6 +65,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutIndexRoute
+  '/legal': typeof LegalIndexRoute
+  '/privacy': typeof PrivacyIndexRoute
   '/projects': typeof ProjectsIndexRoute
   '/skills': typeof SkillsIndexRoute
   '/write': typeof WriteIndexRoute
@@ -59,21 +75,47 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about/': typeof AboutIndexRoute
+  '/legal/': typeof LegalIndexRoute
+  '/privacy/': typeof PrivacyIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/skills/': typeof SkillsIndexRoute
   '/write/': typeof WriteIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/projects' | '/skills' | '/write'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/legal'
+    | '/privacy'
+    | '/projects'
+    | '/skills'
+    | '/write'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/projects' | '/skills' | '/write'
-  id: '__root__' | '/' | '/about/' | '/projects/' | '/skills/' | '/write/'
+  to:
+    | '/'
+    | '/about'
+    | '/legal'
+    | '/privacy'
+    | '/projects'
+    | '/skills'
+    | '/write'
+  id:
+    | '__root__'
+    | '/'
+    | '/about/'
+    | '/legal/'
+    | '/privacy/'
+    | '/projects/'
+    | '/skills/'
+    | '/write/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutIndexRoute: typeof AboutIndexRoute
+  LegalIndexRoute: typeof LegalIndexRoute
+  PrivacyIndexRoute: typeof PrivacyIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
   SkillsIndexRoute: typeof SkillsIndexRoute
   WriteIndexRoute: typeof WriteIndexRoute
@@ -109,6 +151,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy/': {
+      id: '/privacy/'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/': {
+      id: '/legal/'
+      path: '/legal'
+      fullPath: '/legal'
+      preLoaderRoute: typeof LegalIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about/': {
       id: '/about/'
       path: '/about'
@@ -122,6 +178,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutIndexRoute: AboutIndexRoute,
+  LegalIndexRoute: LegalIndexRoute,
+  PrivacyIndexRoute: PrivacyIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
   SkillsIndexRoute: SkillsIndexRoute,
   WriteIndexRoute: WriteIndexRoute,

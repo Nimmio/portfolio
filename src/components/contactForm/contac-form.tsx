@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -20,6 +19,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import Captcha from "../captcha/captcha";
 import { Link } from "@tanstack/react-router";
 import { submitContactForm } from "@/lib/utils";
+import { Checkbox } from "../ui/checkbox";
 
 export const formSchema = z.object({
   name: z.string().min(2, {
@@ -38,9 +38,16 @@ export const formSchema = z.object({
     message: "Please solve the security question.",
   }),
   captchaQuestion: z.string(),
+  gdprConsent: z.boolean().refine((value) => value === true, {
+    message: "You must accept the data protection terms to proceed.",
+  }),
 });
 
-export function ContactForm() {
+interface ContactFormProps {
+  email: string;
+}
+
+export function ContactForm({ email }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     success: boolean;
@@ -56,6 +63,7 @@ export function ContactForm() {
       message: "",
       captchaAnswer: "",
       captchaQuestion: "",
+      gdprConsent: false,
     },
   });
 
@@ -184,14 +192,45 @@ export function ContactForm() {
               </FormItem>
             )}
           />
-          {/* 
-          <FormDescription className="text-xs">
-            By submitting this form, you agree to our{" "}
-            <Link to="/privacy-policy" className="underline">
-              Privacy Policy
-            </Link>
-            . Your data will only be used to respond to your inquiry.
-          </FormDescription> */}
+          <FormField
+            control={form.control}
+            name="gdprConsent"
+            render={({ field }) => (
+              <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+                <div className="space-y-1 leading-none">
+                  <FormLabel className="text-sm font-normal">
+                    <span>
+                      I have read the{" "}
+                      <Link
+                        to="/privacy"
+                        className="underline text-primary hover:text-primary/80"
+                      >
+                        Privacy Policy
+                      </Link>{" "}
+                      and I consent to my data being collected and stored
+                      electronically to answer my request.
+                      <br /> Note: You can withdraw your consent at any time for
+                      the future by sending an email to{" "}
+                      <a
+                        className="underline text-primary hover:text-primary/80"
+                        href={`mailto:${email}`}
+                      >
+                        {email}
+                      </a>
+                      .
+                    </span>
+                  </FormLabel>
+                  <FormMessage />
+                </div>
+              </FormItem>
+            )}
+          />
 
           {submitStatus && (
             <Alert variant={submitStatus.success ? "default" : "destructive"}>

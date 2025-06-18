@@ -2,7 +2,7 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import * as fs from "node:fs";
 import { createServerFn } from "@tanstack/react-start";
-import { about, infos, projects, skills } from "@/types/data";
+import { about, infos, legal, projects, skills } from "@/types/data";
 import { createServer } from "node:http";
 import { formSchema } from "@/components/contactForm/contac-form";
 import { sendMail } from "./mailer";
@@ -19,6 +19,12 @@ export const getInfos = createServerFn({
   method: "GET",
 }).handler(async () => {
   return (await readJson("info.json")) as infos;
+});
+
+export const getLegal = createServerFn({
+  method: "GET",
+}).handler(async () => {
+  return (await readJson("legal.json")) as legal;
 });
 
 export const getSkills = createServerFn({

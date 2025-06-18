@@ -1,3 +1,4 @@
+import PageHeader from "@/components/pageHeader/page-header";
 import SocialsAndMail from "@/components/socialsAndMail/socials-and-mail";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,15 +15,7 @@ function RouteComponent() {
   const [info, aboutMe] = Route.useLoaderData();
   return (
     <div className="container px-4 py-12 md:px-6 md:py-16 mx-auto">
-      <div className="flex items-center mb-8">
-        <Button variant="ghost" size="sm" asChild className="mr-4">
-          <Link to="/">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back
-          </Link>
-        </Button>
-        <h1 className="text-3xl font-bold tracking-tight">About Me</h1>
-      </div>
+      <PageHeader title="About Me" />
 
       <div className="grid gap-8 md:grid-cols-[2fr_3fr]">
         <div className="space-y-6">

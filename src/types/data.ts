@@ -42,3 +42,11 @@ export type projects = Array<{
   repoUrl: string;
   demoUrl?: string;
 }>;
+
+export interface legal {
+  street: string;
+  city: string;
+  country: string;
+  lastUpdate: string;
+  website: string;
+}
