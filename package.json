@@ -39,6 +39,8 @@
     "zod": "^3.25.64"
   },
   "devDependencies": {
+    "@inlang/paraglide-js": "^2.1.0",
+    "@inlang/paraglide-vite": "^1.4.0",
     "@tailwindcss/typography": "^0.5.16",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
