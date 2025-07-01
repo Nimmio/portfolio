@@ -14,7 +14,6 @@ export default defineConfig({
       outputStructure: "message-modules",
       cookieName: "PARAGLIDE_LOCALE",
       strategy: ["cookie", "url", "preferredLanguage", "baseLocale"],
-      disableAsyncLocalStorage: true, // ⚠️ Use with caution
     }),
     tsConfigPaths(),
     tanstackStart(),
