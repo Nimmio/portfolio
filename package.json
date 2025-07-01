@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "paraglide-js compile --project ./project.inlang --outdir ./app/paraglide && vite build",
     "machine-translate": "inlang machine translate --project project.inlang"
   },
   "keywords": [],
