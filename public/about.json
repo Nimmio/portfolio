@@ -1,10 +1,18 @@
 {
-  "aboutMe": [
-    "I'm a full-stack developer and UX designer with over five years of experience creating web applications and digital experiences. I'm passionate about building products that are not only functional but also intuitive and enjoyable to use.",
-    "My journey in tech began with my apprenticeships as a Certified IT Specialist (Application Development) at ProCRM IT Systems GmbH and opendynamic GmbH & Co. KG. This foundational training, combined with my prior education as a State-recognized Technical Assistant in Computer Science from BBS Bad Bergzabern, laid the groundwork for my career.",
-    "Since then, I've worked with established companies, including opendynamic GmbH & Co. KG as a Software Developer and most recently as a Senior Web Developer at Thanera GmbH, where I delivered solutions that solved real problems for users.",
-    "When I'm not coding, you can find me exploring the world of 3D printing, staying active with fitness, or diving into exciting video games."
-  ],
+  "aboutMe": {
+    "en": [
+      "I'm a full-stack developer and UX designer with over five years of experience creating web applications and digital experiences. I'm passionate about building products that are not only functional but also intuitive and enjoyable to use.",
+      "My journey in tech began with my apprenticeships as a Certified IT Specialist (Application Development) at ProCRM IT Systems GmbH and opendynamic GmbH & Co. KG. This foundational training, combined with my prior education as a State-recognized Technical Assistant in Computer Science from BBS Bad Bergzabern, laid the groundwork for my career.",
+      "Since then, I've worked with established companies, including opendynamic GmbH & Co. KG as a Software Developer and most recently as a Senior Web Developer at Thanera GmbH, where I delivered solutions that solved real problems for users.",
+      "When I'm not coding, you can find me exploring the world of 3D printing, staying active with fitness, or diving into exciting video games."
+    ],
+    "de": [
+      "Ich bin ein Full-Stack-Entwickler und UX-Designer mit über fünf Jahren Erfahrung in der Erstellung von Webanwendungen und digitalen Erlebnissen. Es ist meine Leidenschaft, Produkte zu entwickeln, die nicht nur funktional, sondern auch intuitiv und angenehm zu bedienen sind.",
+      "Mein Weg in der Technologie begann mit meinen Ausbildungen zum Fachinformatiker (Anwendungsentwicklung) bei ProCRM IT Systems GmbH und opendynamic GmbH & Co. KG. Diese grundlegende Ausbildung, kombiniert mit meiner vorherigen Ausbildung zum staatlich geprüften Assistenten für Informatik an der BBS Bad Bergzabern, legte den Grundstein für meine Karriere.",
+      "Seitdem habe ich mit etablierten Unternehmen zusammengearbeitet, darunter opendynamic GmbH & Co. KG als Softwareentwickler und zuletzt als Senior Webentwickler bei Thanera GmbH, wo ich Lösungen geliefert habe, die echte Probleme für Benutzer gelöst haben.",
+      "Wenn ich nicht gerade programmiere, findet man mich beim Erkunden der Welt des 3D-Drucks, beim Fitnesstraining oder beim Eintauchen in spannende Videospiele."
+    ]
+  },
   "experience": [
     {
       "jobTitle": "Senior Web Developer",
@@ -19,17 +27,26 @@
   ],
   "education": [
     {
-      "title": "Apprenticeship - Certified IT Specialist (Application Development)",
+      "title": {
+        "en": "Apprenticeship - Certified IT Specialist (Application Development)",
+        "de": "Ausbildung zum Fachinformatiker (Anwendungsentwicklung)"
+      },
       "instituation": "opendynamic GmbH & Co. KG",
       "time": "08.2018 – 07.2019"
     },
     {
-      "title": "Apprenticeship - Certified IT Specialist (Application Development)",
+      "title": {
+        "en": "Apprenticeship - Certified IT Specialist (Application Development)",
+        "de": "Ausbildung zum Fachinformatiker (Anwendungsentwicklung)"
+      },
       "instituation": "ProCRM IT Systems GmbH",
       "time": "08.2016 – 07.2018"
     },
     {
-      "title": "State-recognized Technical Assistant in Computer Science",
+      "title": {
+        "en": "State-recognized Technical Assistant in Computer Science",
+        "de": "Staatlich geprüfter Technischer Assistent für Informatik"
+      },
       "instituation": "BBS Bad Bergzabern",
       "time": "2007 – 2010"
     }

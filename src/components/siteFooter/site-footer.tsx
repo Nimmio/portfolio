@@ -1,3 +1,4 @@
+import { m } from "@/paraglide/messages";
 import { Link } from "@tanstack/react-router";
 import React from "react";
 
@@ -27,25 +28,25 @@ const SiteFooter = ({
             to="/legal"
             className="text-sm text-muted-foreground hover:underline"
           >
-            Legal Notice
+            {m.orange_careful_dingo_dig()}
           </Link>
           <Link
             to="/privacy"
             className="text-sm text-muted-foreground hover:underline"
           >
-            Privacy Policy
+            {m.born_novel_ladybug_grow()}
           </Link>
           <Link
             to="/write"
             className="text-sm text-muted-foreground hover:underline"
           >
-            Write Me
+            {m.smug_stout_elephant_nudge()}
           </Link>
           <a
             href={`mailto:${email}`}
             className="text-sm text-muted-foreground hover:underline"
           >
-            Contact
+            {m.sharp_broad_insect_laugh()}
           </a>
           <a
             href={github}

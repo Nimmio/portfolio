@@ -10,13 +10,15 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { useTheme } from "../ThemeProvider";
+import { m } from "@/paraglide/messages";
+import { getLocale, locales, setLocale } from "@/paraglide/runtime";
 
 const routes = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/skills", label: "Skills" },
-  { href: "/about", label: "About" },
-  { href: "/write", label: "Write Me" },
+  { href: "/", label: m.solid_steep_duck_fry() },
+  { href: "/projects", label: m.fresh_jolly_porpoise_create() },
+  { href: "/skills", label: m.drab_quiet_earthworm_assure },
+  { href: "/about", label: m.free_late_fish_gaze() },
+  { href: "/write", label: m.smug_stout_elephant_nudge },
 ];
 
 interface SiteHeaderProps {
@@ -33,7 +35,7 @@ const SiteHeader = ({ name = "John Doe" }: SiteHeaderProps) => {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
+                <span className="sr-only">{m.hour_least_seal_fry()}</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
@@ -75,19 +77,36 @@ const SiteHeader = ({ name = "John Doe" }: SiteHeaderProps) => {
               <Button variant="ghost" size="icon">
                 <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                 <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                <span className="sr-only">Toggle theme</span>
+                <span className="sr-only">{m.mealy_light_jan_enchant()}</span>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuItem onClick={() => setTheme("light")}>
-                Light
+                {m.agent_dull_mammoth_kick()}
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => setTheme("dark")}>
-                Dark
+                {m.full_dizzy_worm_trust()}
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => setTheme("system")}>
-                System
+                {m.curly_maroon_panda_sew()}
               </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                {getLocale()}
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {locales.map((locale) => (
+                <DropdownMenuItem
+                  key={locale}
+                  onClick={() => setLocale(locale)}
+                >
+                  {locale}
+                </DropdownMenuItem>
+              ))}
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

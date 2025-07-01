@@ -1,9 +1,9 @@
 import PageHeader from "@/components/pageHeader/page-header";
 import ProjectCard from "@/components/projectCard/project-card";
-import { Button } from "@/components/ui/button";
 import { getProjects } from "@/lib/utils";
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { m } from "@/paraglide/messages";
+import { getLocale } from "@/paraglide/runtime";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/projects/")({
   component: RouteComponent,
@@ -12,16 +12,17 @@ export const Route = createFileRoute("/projects/")({
 
 function RouteComponent() {
   const projects = Route.useLoaderData();
+  const locale = getLocale();
   return (
     <div className="container px-4 py-12 md:px-6 md:py-16 mx-auto">
-      <PageHeader title="All Projects" />
+      <PageHeader title={m.orange_mealy_midge_dream()} />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <ProjectCard
             key={project.name}
             title={project.name}
-            description={project.description.en}
+            description={project.description[locale]}
             tags={project.stack}
             image={`/images/${project.imgSrc}`}
             repoUrl={project.repoUrl}

@@ -1,10 +1,10 @@
 import PageHeader from "@/components/pageHeader/page-header";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { getInfos, getLegal } from "@/lib/utils";
+import { m } from "@/paraglide/messages";
+import { getLocale } from "@/paraglide/runtime";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
 import { parseISO, format } from "date-fns";
 export const Route = createFileRoute("/legal/")({
   component: RouteComponent,
@@ -13,20 +13,20 @@ export const Route = createFileRoute("/legal/")({
 
 function RouteComponent() {
   const [legal, info] = Route.useLoaderData();
-
+  const locale = getLocale();
   return (
     <div className="container px-4 py-12 md:px-6 md:py-16 mx-auto">
-      <PageHeader title="Legal Notice" />
+      <PageHeader title={m.orange_careful_dingo_dig()} />
       <div className="space-y-8">
         <Card>
           <CardHeader>
-            <CardTitle>
-              Information pursuant to § 5 TMG (German Telemedia Act)
-            </CardTitle>
+            <CardTitle>{m.top_best_puma_chop()}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <h3 className="font-semibold mb-2">Responsible for content:</h3>
+              <h3 className="font-semibold mb-2">
+                {m.large_bold_peacock_promise()}:
+              </h3>
               <p>
                 {info.Name}
                 <br />
@@ -34,7 +34,7 @@ function RouteComponent() {
                 <br />
                 {legal.city}
                 <br />
-                {legal.country}
+                {legal.country[locale]}
               </p>
             </div>
           </CardContent>
@@ -42,11 +42,11 @@ function RouteComponent() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Contact Information</CardTitle>
+            <CardTitle>{m.antsy_zippy_haddock_clasp()}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
             <p>
-              <strong>Email:</strong>{" "}
+              <strong>{m.gaudy_mealy_crab_slide()}:</strong>{" "}
               <a
                 href={`mailto:${info.Email}`}
                 className="text-primary hover:underline"
@@ -55,7 +55,7 @@ function RouteComponent() {
               </a>
             </p>
             <p>
-              <strong>Website:</strong>{" "}
+              <strong>{m.fun_quick_gorilla_spin()}:</strong>{" "}
               <Link to="/" className="text-primary hover:underline">
                 {legal.website}
               </Link>
@@ -65,21 +65,21 @@ function RouteComponent() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Professional Designation</CardTitle>
+            <CardTitle>{m.ok_suave_cuckoo_grin()}</CardTitle>
           </CardHeader>
           <CardContent>
             <p>
-              <strong>Professional title:</strong> {info.Job}
+              <strong>{m.loved_nimble_pelican_hint()}:</strong> {info.Job}
               <br />
-              <strong>Regulatory authority:</strong> Not subject to professional
-              chamber regulations
+              <strong>{m.busy_caring_okapi_pinch()}:</strong>{" "}
+              {m.new_livid_mongoose_imagine()}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Editorial Responsibility</CardTitle>
+            <CardTitle>{m.cute_early_wombat_mix()}</CardTitle>
           </CardHeader>
           <CardContent>
             <p>
@@ -89,7 +89,7 @@ function RouteComponent() {
               <br />
               {legal.city}
               <br />
-              {legal.country}
+              {legal.country[locale]}
             </p>
           </CardContent>
         </Card>
@@ -98,77 +98,39 @@ function RouteComponent() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Liability for Content</CardTitle>
+            <CardTitle>{m.honest_bald_parakeet_cheer()}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <p>
-              As service providers, we are liable for own contents of these
-              websites according to Paragraph 7, Sect. 1 German Telemedia Act
-              (TMG). However, according to Paragraphs 8 to 10 German Telemedia
-              Act (TMG), service providers are not under obligation to
-              permanently monitor submitted or stored information or to search
-              for evidences that indicate illegal activities.
-            </p>
-            <p>
-              Legal obligations to removing information or to blocking the use
-              of information remain unchallenged. In this case, liability is
-              only possible at the time of knowledge about a specific violation
-              of law. Illegal contents will be removed immediately at the time
-              we get knowledge of them.
-            </p>
+            <p>{m.bright_noble_jaguar_walk()}</p>
+            <p>{m.noble_smart_sloth_lift()}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Liability for Links</CardTitle>
+            <CardTitle>{m.light_bland_ray_evoke()}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <p>
-              Our offer includes links to external third party websites. We have
-              no influence on the contents of those websites, therefore we
-              cannot guarantee for those contents. Providers or administrators
-              of linked websites are always responsible for the contents of the
-              linked websites. All linked websites have been checked for
-              possible violations of law when they were linked to ours. No
-              illegal contents were detected at the time of linking.
-            </p>
-            <p>
-              A permanent monitoring of the contents of linked websites cannot
-              be imposed without reasonable indications that there has been a
-              violation of law. Illegal links will be removed immediately at the
-              time we get knowledge of them.
-            </p>
+            <p>{m.royal_main_dingo_pinch()}</p>
+            <p>{m.same_civil_shell_kiss()}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Copyright</CardTitle>
+            <CardTitle>{m.equal_lofty_sawfish_heart()}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <p>
-              Contents and compilations published on these websites by the
-              providers are subject to German copyright laws. Reproduction,
-              editing, distribution as well as the use of any kind outside the
-              scope of the copyright law require a written permission of the
-              author or originator. Downloads and copies of these websites are
-              permitted for private use only.
-            </p>
-            <p>
-              The commercial use of our contents without permission of the
-              originator is prohibited. Copyright laws of third parties are
-              respected as long as the contents on these websites do not
-              originate from the provider. Contributions of third parties on
-              this site are indicated as such. However, if you notice any
-              violations of copyright law, please inform us. Such contents will
-              be removed immediately.
-            </p>
+            <p>{m.quaint_strong_herring_drip()}</p>
+            <p>{m.misty_livid_herring_cheer()}</p>
           </CardContent>
         </Card>
 
         <div className="text-sm text-muted-foreground">
-          <p>Last updated: {format(parseISO(legal.lastUpdate), "PPP")}</p>
+          <p>
+            {m.arable_icy_hornet_dream()}:{" "}
+            {format(parseISO(legal.lastUpdate), "PPP")}
+          </p>
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import PageHeader from "@/components/pageHeader/page-header";
 import SkillBadge from "@/components/skillBadge/skill-badge";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,8 +8,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { getSkills } from "@/lib/utils";
+import { m } from "@/paraglide/messages";
+import { getLocale } from "@/paraglide/runtime";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/skills/")({
   component: RouteComponent,
@@ -19,16 +19,16 @@ export const Route = createFileRoute("/skills/")({
 
 function RouteComponent() {
   const skills = Route.useLoaderData();
-
+  const locale = getLocale();
   return (
     <div className="container px-4 py-12 md:px-6 md:py-16 mx-auto">
-      <PageHeader title="My Skills" />
+      <PageHeader title={m.fair_teary_trout_treasure()} />
 
       <div className="grid gap-8">
         {skills.AllSkills.map((skillGroup) => (
-          <Card key={skillGroup.groupTitle}>
+          <Card key={skillGroup.groupTitle["en"]}>
             <CardHeader>
-              <CardTitle>{skillGroup.groupTitle}</CardTitle>
+              <CardTitle>{skillGroup.groupTitle[locale]}</CardTitle>
               <CardDescription>{skillGroup.description}</CardDescription>
             </CardHeader>
             <CardContent>

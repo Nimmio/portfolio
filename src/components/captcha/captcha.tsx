@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RefreshCw } from "lucide-react";
+import { m } from "@/paraglide/messages";
 
 interface CaptchaProps {
   onQuestionGenerated: (question: string) => void;
@@ -10,7 +11,6 @@ interface CaptchaProps {
 }
 const Captcha = ({ onQuestionGenerated, onAnswerChange }: CaptchaProps) => {
   const [captchaQuestion, setCaptchaQuestion] = useState("");
-  const [expectedAnswer, setExpectedAnswer] = useState<number>(0);
   const [userAnswer, setUserAnswer] = useState("");
 
   // Generate a simple math captcha
@@ -24,22 +24,18 @@ const Captcha = ({ onQuestionGenerated, onAnswerChange }: CaptchaProps) => {
       case "+":
         num1 = Math.floor(Math.random() * 10) + 1;
         num2 = Math.floor(Math.random() * 10) + 1;
-        setExpectedAnswer(num1 + num2);
         break;
       case "-":
         num1 = Math.floor(Math.random() * 10) + 1;
         num2 = Math.floor(Math.random() * num1) + 1;
-        setExpectedAnswer(num1 - num2);
         break;
       case "*":
         num1 = Math.floor(Math.random() * 5) + 1;
         num2 = Math.floor(Math.random() * 5) + 1;
-        setExpectedAnswer(num1 * num2);
         break;
       default:
         num1 = Math.floor(Math.random() * 10) + 1;
         num2 = Math.floor(Math.random() * 10) + 1;
-        setExpectedAnswer(num1 + num2);
     }
 
     const question = `${num1} ${operation} ${num2} = ?`;
@@ -58,19 +54,19 @@ const Captcha = ({ onQuestionGenerated, onAnswerChange }: CaptchaProps) => {
   return (
     <div className="space-y-2">
       <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-        Security Check
+        {m.ago_inclusive_antelope_flow()}
       </label>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 mt-4">
         <div className="bg-muted p-3 rounded text-center min-w-[140px] font-mono text-lg">
           {captchaQuestion}
         </div>
         <Input
           type="text"
-          placeholder="Answer"
+          placeholder={m.nice_even_pigeon_sew()}
           className="max-w-[120px]"
           value={userAnswer}
           onChange={(e) => handleAnswerChange(e.target.value)}
-          aria-label="CAPTCHA answer"
+          aria-label={m.wide_close_opossum_greet()}
         />
         <Button
           type="button"

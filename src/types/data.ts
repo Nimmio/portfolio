@@ -4,12 +4,12 @@ export interface infos {
   github: string;
   linkedin: string;
   Job: string;
-  location: string;
+  location: { en: string; de: string };
 }
 
 export interface skills {
   AllSkills: Array<{
-    groupTitle: string;
+    groupTitle: { de: string; en: string };
     description: string;
     skills: string[];
   }>;
@@ -17,14 +17,14 @@ export interface skills {
 }
 
 export interface about {
-  aboutMe: string[];
+  aboutMe: { en: string[]; de: string[] };
   experience: Array<{
     jobTitle: string;
     company: string;
     time: string;
   }>;
   education: Array<{
-    title: string;
+    title: { en: string; de: string };
     instituation: string;
     time: string;
   }>;
@@ -46,7 +46,7 @@ export type projects = Array<{
 export interface legal {
   street: string;
   city: string;
-  country: string;
+  country: { en: string; de: string };
   lastUpdate: string;
   website: string;
 }

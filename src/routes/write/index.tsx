@@ -1,9 +1,9 @@
 import { ContactForm } from "@/components/contactForm/contac-form";
 import PageHeader from "@/components/pageHeader/page-header";
-import { Button } from "@/components/ui/button";
 import { getInfos } from "@/lib/utils";
+import { m } from "@/paraglide/messages";
+import { getLocale } from "@/paraglide/runtime";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/write/")({
   component: RouteComponent,
@@ -12,22 +12,21 @@ export const Route = createFileRoute("/write/")({
 
 function RouteComponent() {
   const info = Route.useLoaderData();
+  const locale = getLocale();
   return (
     <div className="container px-4 py-12 md:px-6 md:py-16 mx-auto">
-      <PageHeader title="Write Me" />
+      <PageHeader title={m.yummy_zesty_pug_nudge()} />
 
       <div>
         <div className="prose prose-slate dark:prose-invert">
-          <h2>Get in Touch</h2>
+          <h2>{m.gross_funny_boar_nudge()}</h2>
+          <p>{m.mean_sweet_jay_flow()}</p>
+          <h3>{m.antsy_zippy_haddock_clasp()}</h3>
           <p>
-            Have a question or want to work together? Feel free to reach out
-            using the contact form. I'll get back to you as soon as possible.
-          </p>
-          <h3>Contact Information</h3>
-          <p>
-            Email: <a href={`mailto:${info.Email}`}>{info.Email}</a>
+            {m.gaudy_mealy_crab_slide()}:{" "}
+            <a href={`mailto:${info.Email}`}>{info.Email}</a>
             <br />
-            Location: {info.location}
+            {m.short_dull_rook_believe()}: {info.location[locale]}
             <br />
             LinkedIn:{" "}
             <a href={info.linkedin} target="_blank" rel="noopener noreferrer">

@@ -1,10 +1,15 @@
 import { createRouter as createTanStackRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
+import { NotFound } from "./components/NotFound";
+import { getRouterBasepath } from "@/lib/router-basepath";
 
-export function createRouter() {
+export function createRouter(pathname?: string) {
   const router = createTanStackRouter({
     routeTree,
+    defaultPreload: "intent",
+    defaultNotFoundComponent: () => <NotFound />,
     scrollRestoration: true,
+    basepath: getRouterBasepath(pathname),
   });
 
   return router;

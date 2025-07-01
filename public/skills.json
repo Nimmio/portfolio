@@ -1,7 +1,7 @@
 {
   "AllSkills": [
     {
-      "groupTitle": "Frontend",
+      "groupTitle": { "en": "Frontend", "de": "Frontend" },
       "description:": "TODO",
       "skills": [
         "HTML/CSS",
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "groupTitle": "Backend",
+      "groupTitle": { "en": "Backend", "de": "Backend" },
       "description:": "TODO",
       "skills": [
         "Node.js",
@@ -34,12 +34,12 @@
       ]
     },
     {
-      "groupTitle": "Database",
+      "groupTitle": { "en": "Database", "de": "Database" },
       "description:": "TODO",
       "skills": ["PostgreSQL", "MongoDB", "SQLite"]
     },
     {
-      "groupTitle": "Other",
+      "groupTitle": { "en": "Other", "de": "Andere" },
       "description:": "TODO",
       "skills": [
         "Git/GitHub",

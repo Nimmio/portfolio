@@ -1,7 +1,7 @@
 {
   "street": "Lindenstraße 8",
   "city": "67433 Neustadt an der Weinstraße",
-  "country": " Germany",
+  "country": { "en": "Germany", "de": "Deutschland" },
   "lastUpdate": "2025-06-18T11:11:08.394Z",
   "website": "https://portfolio.wilhelmit.de/"
 }

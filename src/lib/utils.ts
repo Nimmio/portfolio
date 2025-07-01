@@ -3,9 +3,9 @@ import { twMerge } from "tailwind-merge";
 import * as fs from "node:fs";
 import { createServerFn } from "@tanstack/react-start";
 import { about, infos, legal, projects, skills } from "@/types/data";
-import { createServer } from "node:http";
 import { formSchema } from "@/components/contactForm/contac-form";
 import { sendMail } from "./mailer";
+import { m } from "@/paraglide/messages";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -64,7 +64,7 @@ export const submitContactForm = createServerFn({
     if (!isValidCaptcha) {
       return {
         success: false,
-        message: "Incorrect CAPTCHA answer. Please try again.",
+        message: m.elegant_this_fish_flip(),
       };
     }
 
@@ -88,13 +88,13 @@ export const submitContactForm = createServerFn({
 
       return {
         success: true,
-        message: "Message sent successfully!",
+        message: m.salty_flaky_peacock_taste(),
       };
     } catch (error) {
       console.error("Error sending message:", error);
       return {
         success: false,
-        message: "Failed to send message. Please try again later.",
+        message: m.early_super_wallaby_wave(),
       };
     }
   });

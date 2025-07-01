@@ -1,7 +1,8 @@
-import { baseLocale, getLocale, Locale } from "@/paraglide/runtime";
-import { paraglideMiddleware } from "@/paraglide/server";
 import { createIsomorphicFn } from "@tanstack/react-start";
 import { getWebRequest } from "@tanstack/react-start/server";
+import { baseLocale, getLocale, Locale } from "@/paraglide/runtime.js";
+
+import { paraglideMiddleware } from "@/paraglide/server.js";
 
 export const resolveLocale = createIsomorphicFn()
   .client(getLocale)

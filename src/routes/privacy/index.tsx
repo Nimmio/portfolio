@@ -1,5 +1,6 @@
 import PageHeader from "@/components/pageHeader/page-header";
 import { getInfos, getLegal } from "@/lib/utils";
+import { m } from "@/paraglide/messages";
 import { createFileRoute } from "@tanstack/react-router";
 import { format, parseISO } from "date-fns";
 
@@ -13,23 +14,18 @@ function RouteComponent() {
 
   return (
     <div className="container px-4 py-12 md:px-6 md:py-16">
-      <PageHeader title="Privacy Policy" />
+      <PageHeader title={m.born_novel_ladybug_grow()} />
       <div className="prose prose-slate dark:prose-invert max-w-none">
-        <p>Last updated: {format(parseISO(legal.lastUpdate), "PPP")}</p>
-
-        <h2>1. Introduction</h2>
         <p>
-          This Privacy Policy explains how I collect, use, store, and protect
-          your personal data when you visit my portfolio website. I am committed
-          to ensuring the privacy and security of your personal information in
-          compliance with the General Data Protection Regulation (GDPR).
+          {m.arable_icy_hornet_dream()}:{" "}
+          {format(parseISO(legal.lastUpdate), "PPP")}
         </p>
 
-        <h2>2. Data Controller</h2>
-        <p>
-          The party responsible for data processing (the "Controller") as
-          defined by the General Data Protection Regulation (GDPR) is:
-        </p>
+        <h2>{m.basic_sound_vole_pet()}</h2>
+        <p>{m.grassy_gaudy_porpoise_heart()}</p>
+
+        <h2>{m.dark_teal_cobra_nudge()}</h2>
+        <p>{m.fancy_key_vulture_snip()}</p>
         <p>
           {info.Name}
           <br />
@@ -37,97 +33,48 @@ function RouteComponent() {
           <br />
           {legal.city}
           <br />
-          Email: {info.Email}
+          {m.gaudy_mealy_crab_slide()}: {info.Email}
         </p>
 
-        <h2>3. Contact via Contact Form or Email</h2>
-        <h3>a) Type and Purpose of Data Processing</h3>
-        <p>
-          When you contact us via the contact form or by email, the personal
-          data you voluntarily provide will be processed to handle your request.
-          Specifically, this includes:
-        </p>
+        <h2>{m.candid_quick_halibut_aid()}</h2>
+        <h3>{m.grand_flaky_larva_sway()}</h3>
+        <p>{m.away_giant_turtle_foster()}</p>
         <ul>
-          <li>Your Name</li>
-          <li>Your Email Address</li>
+          <li>{m.sour_major_lionfish_bake()}</li>
+          <li>{m.chunky_suave_parrot_zip()}</li>
         </ul>
-        <p>
-          The sole purpose of processing this data is to communicate with you to
-          answer your inquiry and for any related technical administration.
-        </p>
-        <h3>b) Legal Basis</h3>
-        <p>
-          The processing of this data is based on your explicit consent pursuant
-          to Art. 6(1)(a) GDPR, which you grant by submitting your request. If
-          your inquiry aims at concluding a contract (e.g., a project inquiry),
-          Art. 6(1)(b) GDPR serves as an additional legal basis for processing.
-        </p>
-        <h3>c) Storage Duration</h3>
-        <p>
-          The data you provide will be stored by us until the purpose of the
-          conversation is fulfilled. After your request has been fully
-          processed, your data will be deleted. This will generally occur no
-          later than 90 days after the communication ends.
-        </p>
-        <p>
-          Data will be deleted immediately upon your request (see "Your Rights
-          as a Data Subject").
-        </p>
-        <p>
-          Statutory retention obligations, for example, for business
-          correspondence under commercial or tax law, remain unaffected by the
-          deletion. In such cases, the processing of the data will be
-          restricted.
-        </p>
+        <p>{m.alive_busy_rat_clap()}</p>
+        <h3>{m.slimy_white_hedgehog_delight()}</h3>
+        <p>{m.fit_cute_cow_hunt()}</p>
+        <h3>{m.fresh_crazy_herring_bless()}</h3>
+        <p>{m.upper_smart_nuthatch_ripple()}</p>
+        <p>{m.house_tame_ibex_bless()}</p>
+        <p>{m.fun_cute_thrush_find()}</p>
 
-        <h2>4. Your Rights as a Data Subject</h2>
-        <p>
-          As a data subject, you are entitled to comprehensive rights regarding
-          the processing of your data:
-        </p>
+        <h2>{m.real_game_mouse_borrow()}</h2>
+        <p>{m.yummy_witty_martin_tear()}</p>
         <ul>
           <li>
-            <b>Right of Access (Art. 15 GDPR)</b>: You have the right to obtain
-            confirmation as to whether or not personal data concerning you is
-            being processed, and, where that is the case, access to that
-            information.
+            <b>{m.honest_drab_donkey_aspire()}</b>: {m.bald_level_lynx_trim()}
           </li>
           <li>
-            <b>Right to Rectification (Art. 16 GDPR)</b>: You have the right to
-            obtain the immediate rectification of inaccurate personal data
-            concerning you.
+            <b>{m.early_sunny_panda_attend()}</b>: {m.north_loud_hornet_cut()}
           </li>
           <li>
-            <b>Right to Erasure (Art. 17 GDPR)</b>: You have the right to
-            request the immediate erasure of personal data concerning you. I
-            will comply with this request unless there are legal retention
-            obligations to the contrary.
+            <b>{m.soft_giant_dove_flop()}</b>: {m.warm_lime_anteater_lift()}
           </li>
           <li>
-            <b>Right to Withdraw Consent (Art. 7(3) GDPR)</b>: You have the
-            right to withdraw your consent to the processing of your data at any
-            time for the future. The withdrawal of consent shall not affect the
-            lawfulness of processing based on consent before its withdrawal. You
-            can declare your withdrawal informally via email to [your email
-            address].
+            <b>{m.active_last_elk_earn()}</b>:{" "}
+            {m.smug_dark_shell_rest({ email: info.Email })}
           </li>
           <li>
-            <b>Right to Restriction of Processing (Art. 18 GDPR)</b>: You have
-            the right to request the restriction of the processing of your data.
+            <b>{m.livid_brief_gull_pet()}</b>: {m.late_less_sloth_stab()}
           </li>
           <li>
-            <b>Right to Data Portability (Art. 20 GDPR)</b>: You have the right
-            to receive the personal data concerning you, which you have
-            provided, in a structured, commonly used and machine-readable
-            format.
+            <b>{m.civil_teal_thrush_beam()}</b>: {m.neat_front_llama_radiate()}
           </li>
           <li>
-            <b>
-              Right to Lodge a Complaint with a Supervisory Authority (Art. 77
-              GDPR)
-            </b>
-            : You have the right to lodge a complaint with a data protection
-            supervisory authority about my processing of your personal data.
+            <b>{m.good_tasty_macaw_hug()}</b>: {m.sour_lost_javelina_bubble()}
           </li>
         </ul>
       </div>

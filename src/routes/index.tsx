@@ -6,6 +6,8 @@ import ProjectCard from "@/components/projectCard/project-card";
 import SkillBadge from "@/components/skillBadge/skill-badge";
 import { getFeaturedProjects, getInfos, getSkills } from "@/lib/utils";
 import SocialsAndMail from "@/components/socialsAndMail/socials-and-mail";
+import { m } from "@/paraglide/messages";
+import { getLocale } from "@/paraglide/runtime";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -15,6 +17,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const [info, skills, featuredProjects] = Route.useLoaderData();
+  const locale = getLocale();
   return (
     <main className="flex-1">
       {/* Hero Section */}
@@ -32,11 +35,12 @@ function Home() {
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild>
                 <Link to="/projects">
-                  View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+                  {m.small_chunky_wren_belong()}{" "}
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link to="/about">About Me</Link>
+                <Link to="/about">{m.cute_dark_boar_persist()}</Link>
               </Button>
             </div>
             <SocialsAndMail
@@ -54,15 +58,16 @@ function Home() {
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="space-y-1">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-                Featured Projects
+                {m.safe_good_marmot_tickle()}
               </h2>
               <p className="text-slate-500 dark:text-slate-400">
-                Some of my recent work
+                {m.knotty_best_slug_fold()}
               </p>
             </div>
             <Button variant="ghost" asChild>
               <Link to="/projects">
-                View All <ArrowRight className="ml-2 h-4 w-4" />
+                {m.tasty_cuddly_tapir_climb()}{" "}
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
@@ -71,7 +76,7 @@ function Home() {
               <ProjectCard
                 key={`featuredProject_${featuredProject.name}`}
                 title={featuredProject.name}
-                description={featuredProject.description.en}
+                description={featuredProject.description[locale]}
                 tags={featuredProject.stack}
                 image={`/images/${featuredProject.imgSrc}`}
                 repoUrl={featuredProject.repoUrl}
@@ -88,15 +93,16 @@ function Home() {
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="space-y-1">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-                Skills
+                {m.drab_quiet_earthworm_assure()}
               </h2>
               <p className="text-slate-500 dark:text-slate-400">
-                Technologies I work with
+                {m.teal_odd_sheep_glow()}
               </p>
             </div>
             <Button variant="ghost" asChild>
               <Link to="/skills">
-                View All <ArrowRight className="ml-2 h-4 w-4" />
+                {m.tasty_cuddly_tapir_climb()}
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
