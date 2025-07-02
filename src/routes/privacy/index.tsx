@@ -1,8 +1,8 @@
+import FormatDate from "@/components/formatDate/format-date";
 import PageHeader from "@/components/pageHeader/page-header";
 import { getInfos, getLegal } from "@/lib/utils";
 import { m } from "@/paraglide/messages";
 import { createFileRoute } from "@tanstack/react-router";
-import { format, parseISO } from "date-fns";
 
 export const Route = createFileRoute("/privacy/")({
   component: RouteComponent,
@@ -11,14 +11,13 @@ export const Route = createFileRoute("/privacy/")({
 
 function RouteComponent() {
   const [legal, info] = Route.useLoaderData();
-
   return (
     <div className="container px-4 py-12 md:px-6 md:py-16">
       <PageHeader title={m.born_novel_ladybug_grow()} />
       <div className="prose prose-slate dark:prose-invert max-w-none">
         <p>
           {m.arable_icy_hornet_dream()}:{" "}
-          {format(parseISO(legal.lastUpdate), "PPP")}
+          <FormatDate isoDate={legal.lastUpdate} />
         </p>
 
         <h2>{m.basic_sound_vole_pet()}</h2>

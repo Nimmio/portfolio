@@ -1,3 +1,4 @@
+import FormatDate from "@/components/formatDate/format-date";
 import PageHeader from "@/components/pageHeader/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -129,7 +130,7 @@ function RouteComponent() {
         <div className="text-sm text-muted-foreground">
           <p>
             {m.arable_icy_hornet_dream()}:{" "}
-            {format(parseISO(legal.lastUpdate), "PPP")}
+            <FormatDate isoDate={legal.lastUpdate} />
           </p>
         </div>
       </div>
