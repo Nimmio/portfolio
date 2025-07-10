@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
 import { Menu, Moon, Sun } from "lucide-react";
@@ -27,11 +27,15 @@ interface SiteHeaderProps {
 
 const SiteHeader = ({ name = "John Doe" }: SiteHeaderProps) => {
   const { setTheme } = useTheme();
+  const [sheetOpen, setSheetOpen] = useState<boolean>(false);
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6 mx-auto">
         <div className="flex items-center gap-2">
-          <Sheet>
+          <Sheet
+            open={sheetOpen}
+            onOpenChange={(newOpen) => setSheetOpen(newOpen)}
+          >
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu className="h-5 w-5" />
@@ -39,14 +43,15 @@ const SiteHeader = ({ name = "John Doe" }: SiteHeaderProps) => {
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
-              <nav className="grid gap-6 text-lg font-medium">
+              <nav className="grid gap-6 text-lg font-medium mt-4">
                 {routes.map((route) => (
                   <Link
                     key={route.href}
                     to={route.href}
-                    className={`hover:text-foreground ${
+                    className={`hover:text-foreground ml-4 ${
                       false ? "text-foreground" : "text-muted-foreground"
                     }`}
+                    onClick={() => setSheetOpen(false)}
                   >
                     {route.label}
                   </Link>
